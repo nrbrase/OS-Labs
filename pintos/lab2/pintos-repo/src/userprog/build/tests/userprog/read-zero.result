@@ -1,0 +1,2 @@
+FAIL
+run: ((null)) read() returned -1073741921 instead of 0: FAILED

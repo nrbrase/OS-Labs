@@ -1,0 +1,1460 @@
+Index: utils/setitimer-helper.c
+===================================================================
+--- utils/setitimer-helper.c	(revision 19)
++++ utils/setitimer-helper.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <errno.h>
+-//12193-7806667539233111118
+ #include <limits.h>
+ #include <math.h>
+ #include <stdio.h>
+Index: utils/squish-pty.c
+===================================================================
+--- utils/squish-pty.c	(revision 19)
++++ utils/squish-pty.c	(working copy)
+@@ -1,5 +1,4 @@
+ #define _GNU_SOURCE 1
+-//12822
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <signal.h>
+Index: utils/Makefile
+===================================================================
+--- utils/Makefile	(revision 19)
++++ utils/Makefile	(working copy)
+@@ -1,5 +1,4 @@
+ all: setitimer-helper squish-pty squish-unix
+-# 2207718881418
+ 
+ CC = gcc
+ CFLAGS = -Wall -W
+Index: utils/squish-unix.c
+===================================================================
+--- utils/squish-unix.c	(revision 19)
++++ utils/squish-unix.c	(working copy)
+@@ -1,5 +1,4 @@
+ #define _GNU_SOURCE 1
+-//2837
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <signal.h>
+Index: tests/cksum.h
+===================================================================
+--- tests/cksum.h	(revision 19)
++++ tests/cksum.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef TESTS_CKSUM_H
+-//17310
+ #define TESTS_CKSUM_H
+ 
+ #include <stddef.h>
+Index: tests/main.h
+===================================================================
+--- tests/main.h	(revision 19)
++++ tests/main.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef TESTS_MAIN_H
+-//31771
+ #define TESTS_MAIN_H
+ 
+ void test_main (void);
+Index: tests/arc4.c
+===================================================================
+--- tests/arc4.c	(revision 19)
++++ tests/arc4.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <stdint.h>
+-//10231
+ #include "tests/arc4.h"
+ 
+ /* Swap bytes. */
+Index: tests/Make.tests
+===================================================================
+--- tests/Make.tests	(revision 19)
++++ tests/Make.tests	(working copy)
+@@ -1,5 +1,4 @@
+ # -*- makefile -*-
+-# 2121616251777601
+ 
+ include $(patsubst %,$(SRCDIR)/%/Make.tests,$(TEST_SUBDIRS))
+ 
+Index: tests/arc4.h
+===================================================================
+--- tests/arc4.h	(revision 19)
++++ tests/arc4.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef TESTS_ARC4_H
+-//25177
+ #define TESTS_ARC4_H
+ 
+ #include <stddef.h>
+Index: tests/lib.c
+===================================================================
+--- tests/lib.c	(revision 19)
++++ tests/lib.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "tests/lib.h"
+-//32462
+ #include <random.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+Index: tests/lib.h
+===================================================================
+--- tests/lib.h	(revision 19)
++++ tests/lib.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef TESTS_LIB_H
+-//18401
+ #define TESTS_LIB_H
+ 
+ #include <debug.h>
+Index: tests/cksum.c
+===================================================================
+--- tests/cksum.c	(revision 19)
++++ tests/cksum.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* crctab[] and cksum() are from the `cksum' entry in SUSv3. */
+-//17420
+ 
+ #include <stdint.h>
+ #include "tests/cksum.h"
+Index: tests/main.c
+===================================================================
+--- tests/main.c	(revision 19)
++++ tests/main.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <random.h>
+-//12866
+ #include "tests/lib.h"
+ #include "tests/main.h"
+ 
+Index: userprog/Make.vars
+===================================================================
+--- userprog/Make.vars	(revision 19)
++++ userprog/Make.vars	(working copy)
+@@ -1,5 +1,4 @@
+ # -*- makefile -*-
+-# 68439233984012
+ 
+ kernel.bin: DEFINES = -DUSERPROG -DFILESYS
+ KERNEL_SUBDIRS = threads devices lib lib/kernel userprog filesys
+Index: userprog/tss.c
+===================================================================
+--- userprog/tss.c	(revision 19)
++++ userprog/tss.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "userprog/tss.h"
+-//12421
+ #include <debug.h>
+ #include <stddef.h>
+ #include "userprog/gdt.h"
+Index: userprog/syscall.c
+===================================================================
+--- userprog/syscall.c	(revision 19)
++++ userprog/syscall.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "userprog/syscall.h"
+-//14406
+ #include <stdio.h>
+ #include <syscall-nr.h>
+ #include "threads/interrupt.h"
+Index: userprog/pagedir.c
+===================================================================
+--- userprog/pagedir.c	(revision 19)
++++ userprog/pagedir.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "userprog/pagedir.h"
+-//7692
+ #include <stdbool.h>
+ #include <stddef.h>
+ #include <string.h>
+Index: userprog/exception.c
+===================================================================
+--- userprog/exception.c	(revision 19)
++++ userprog/exception.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "userprog/exception.h"
+-//13018
+ #include <inttypes.h>
+ #include <stdio.h>
+ #include "userprog/gdt.h"
+Index: userprog/gdt.c
+===================================================================
+--- userprog/gdt.c	(revision 19)
++++ userprog/gdt.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "userprog/gdt.h"
+-//32751
+ #include <debug.h>
+ #include "userprog/tss.h"
+ #include "threads/palloc.h"
+Index: userprog/process.c
+===================================================================
+--- userprog/process.c	(revision 19)
++++ userprog/process.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "userprog/process.h"
+-//18838
+ #include <debug.h>
+ #include <inttypes.h>
+ #include <round.h>
+Index: userprog/tss.h
+===================================================================
+--- userprog/tss.h	(revision 19)
++++ userprog/tss.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USERPROG_TSS_H
+-//17825
+ #define USERPROG_TSS_H
+ 
+ #include <stdint.h>
+Index: userprog/syscall.h
+===================================================================
+--- userprog/syscall.h	(revision 19)
++++ userprog/syscall.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USERPROG_SYSCALL_H
+-//32306
+ #define USERPROG_SYSCALL_H
+ 
+ void syscall_init (void);
+Index: userprog/pagedir.h
+===================================================================
+--- userprog/pagedir.h	(revision 19)
++++ userprog/pagedir.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USERPROG_PAGEDIR_H
+-//11961
+ #define USERPROG_PAGEDIR_H
+ 
+ #include <stdbool.h>
+Index: userprog/exception.h
+===================================================================
+--- userprog/exception.h	(revision 19)
++++ userprog/exception.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USERPROG_EXCEPTION_H
+-//17906
+ #define USERPROG_EXCEPTION_H
+ 
+ /* Page fault error code bits that describe the cause of the exception.  */
+Index: userprog/gdt.h
+===================================================================
+--- userprog/gdt.h	(revision 19)
++++ userprog/gdt.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USERPROG_GDT_H
+-//9463
+ #define USERPROG_GDT_H
+ 
+ #include "threads/loader.h"
+Index: userprog/process.h
+===================================================================
+--- userprog/process.h	(revision 19)
++++ userprog/process.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USERPROG_PROCESS_H
+-//11360
+ #define USERPROG_PROCESS_H
+ 
+ #include "threads/thread.h"
+Index: prep/Makefile
+===================================================================
+--- prep/Makefile	(revision 19)
++++ prep/Makefile	(working copy)
+@@ -1,5 +1,4 @@
+ 
+-# 2207718881418
+ all: test_mem
+ 
+ LIBDIR=../lib
+Index: prep/test_mem.c
+===================================================================
+--- prep/test_mem.c	(revision 19)
++++ prep/test_mem.c	(working copy)
+@@ -1,5 +1,4 @@
+ /*
+-//21694
+  * This test program tests the thread-safe memory allocator 
+  * in project 0.
+  *
+Index: prep/memalloc.h
+===================================================================
+--- prep/memalloc.h	(revision 19)
++++ prep/memalloc.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __MEMALLOC_H
+-//4496
+ #define __MEMALLOC_H
+ 
+ #include <stdint.h>
+Index: lib/string.c
+===================================================================
+--- lib/string.c	(revision 19)
++++ lib/string.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <string.h>
+-//29883
+ #include <debug.h>
+ 
+ /* Copies SIZE bytes from SRC to DST, which must not overlap.
+Index: lib/limits.h
+===================================================================
+--- lib/limits.h	(revision 19)
++++ lib/limits.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_LIMITS_H
+-//28159
+ #define __LIB_LIMITS_H
+ 
+ #define CHAR_BIT 8
+Index: lib/stdint.h
+===================================================================
+--- lib/stdint.h	(revision 19)
++++ lib/stdint.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STDINT_H
+-//23194
+ #define __LIB_STDINT_H
+ 
+ typedef signed char int8_t;
+Index: lib/stdbool.h
+===================================================================
+--- lib/stdbool.h	(revision 19)
++++ lib/stdbool.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STDBOOL_H
+-//21996
+ #define __LIB_STDBOOL_H
+ 
+ #define bool	_Bool
+Index: lib/string.h
+===================================================================
+--- lib/string.h	(revision 19)
++++ lib/string.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STRING_H
+-//29325
+ #define __LIB_STRING_H
+ 
+ #include <stddef.h>
+Index: lib/stddef.h
+===================================================================
+--- lib/stddef.h	(revision 19)
++++ lib/stddef.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STDDEF_H
+-//20507
+ #define __LIB_STDDEF_H
+ 
+ #define NULL ((void *) 0)
+Index: lib/random.c
+===================================================================
+--- lib/random.c	(revision 19)
++++ lib/random.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "random.h"
+-//22695
+ #include <stdbool.h>
+ #include <stdint.h>
+ #include "debug.h"
+Index: lib/stdlib.c
+===================================================================
+--- lib/stdlib.c	(revision 19)
++++ lib/stdlib.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <ctype.h>
+-//27214
+ #include <debug.h>
+ #include <random.h>
+ #include <stdlib.h>
+Index: lib/stdio.c
+===================================================================
+--- lib/stdio.c	(revision 19)
++++ lib/stdio.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <stdio.h>
+-//28775
+ #include <ctype.h>
+ #include <inttypes.h>
+ #include <round.h>
+Index: lib/inttypes.h
+===================================================================
+--- lib/inttypes.h	(revision 19)
++++ lib/inttypes.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_INTTYPES_H
+-//17386
+ #define __LIB_INTTYPES_H
+ 
+ #include <stdint.h>
+Index: lib/random.h
+===================================================================
+--- lib/random.h	(revision 19)
++++ lib/random.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_RANDOM_H
+-//30027
+ #define __LIB_RANDOM_H
+ 
+ #include <stddef.h>
+Index: lib/debug.c
+===================================================================
+--- lib/debug.c	(revision 19)
++++ lib/debug.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <debug.h>
+-//16902
+ #include <stdarg.h>
+ #include <stdbool.h>
+ #include <stddef.h>
+Index: lib/stdlib.h
+===================================================================
+--- lib/stdlib.h	(revision 19)
++++ lib/stdlib.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STDLIB_H
+-//17351
+ #define __LIB_STDLIB_H
+ 
+ #include <stddef.h>
+Index: lib/stdio.h
+===================================================================
+--- lib/stdio.h	(revision 19)
++++ lib/stdio.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STDIO_H
+-//3572
+ #define __LIB_STDIO_H
+ 
+ #include <debug.h>
+Index: lib/arithmetic.c
+===================================================================
+--- lib/arithmetic.c	(revision 19)
++++ lib/arithmetic.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <stdint.h>
+-//170
+ 
+ /* On x86, division of one 64-bit integer by another cannot be
+    done with a single instruction or a short sequence.  Thus, GCC
+Index: lib/ctype.h
+===================================================================
+--- lib/ctype.h	(revision 19)
++++ lib/ctype.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_CTYPE_H
+-//32254
+ #define __LIB_CTYPE_H
+ 
+ static inline int islower (int c) { return c >= 'a' && c <= 'z'; }
+Index: lib/stdarg.h
+===================================================================
+--- lib/stdarg.h	(revision 19)
++++ lib/stdarg.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_STDARG_H
+-//14906
+ #define __LIB_STDARG_H
+ 
+ /* GCC has <stdarg.h> functionality as built-ins,
+Index: lib/debug.h
+===================================================================
+--- lib/debug.h	(revision 19)
++++ lib/debug.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_DEBUG_H
+-//20541
+ #define __LIB_DEBUG_H
+ 
+ /* GCC lets us add "attributes" to functions, function
+Index: lib/syscall-nr.h
+===================================================================
+--- lib/syscall-nr.h	(revision 19)
++++ lib/syscall-nr.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_SYSCALL_NR_H
+-//1891
+ #define __LIB_SYSCALL_NR_H
+ 
+ /* System call numbers. */
+Index: lib/packed.h
+===================================================================
+--- lib/packed.h	(revision 19)
++++ lib/packed.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_PACKED_H
+-//11235
+ #define __LIB_PACKED_H
+ 
+ /* The "packed" attribute, when applied to a structure, prevents
+Index: lib/round.h
+===================================================================
+--- lib/round.h	(revision 19)
++++ lib/round.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_ROUND_H
+-//30432
+ #define __LIB_ROUND_H
+ 
+ /* Yields X rounded up to the nearest multiple of STEP.
+Index: lib/ustar.c
+===================================================================
+--- lib/ustar.c	(revision 19)
++++ lib/ustar.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <ustar.h>
+-//4667
+ #include <limits.h>
+ #include <packed.h>
+ #include <stdio.h>
+Index: lib/ustar.h
+===================================================================
+--- lib/ustar.h	(revision 19)
++++ lib/ustar.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_USTAR_H
+-//4567
+ #define __LIB_USTAR_H
+ 
+ /* Support for the standard Posix "ustar" format.  See the
+Index: lib/endian.h
+===================================================================
+--- lib/endian.h	(revision 19)
++++ lib/endian.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef __LIB_ENDIAN_H
+-//26132
+ #define __LIB_ENDIAN_H
+ 
+ 
+Index: filesys/free-map.h
+===================================================================
+--- filesys/free-map.h	(revision 19)
++++ filesys/free-map.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_FREE_MAP_H
+-//21167
+ #define FILESYS_FREE_MAP_H
+ 
+ #include <stdbool.h>
+Index: filesys/off_t.h
+===================================================================
+--- filesys/off_t.h	(revision 19)
++++ filesys/off_t.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_OFF_T_H
+-//12911
+ #define FILESYS_OFF_T_H
+ 
+ #include <stdint.h>
+Index: filesys/inode.h
+===================================================================
+--- filesys/inode.h	(revision 19)
++++ filesys/inode.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_INODE_H
+-//29273
+ #define FILESYS_INODE_H
+ 
+ #include <stdbool.h>
+Index: filesys/directory.c
+===================================================================
+--- filesys/directory.c	(revision 19)
++++ filesys/directory.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "filesys/directory.h"
+-//24028
+ #include <stdio.h>
+ #include <string.h>
+ #include <list.h>
+Index: filesys/Make.vars
+===================================================================
+--- filesys/Make.vars	(revision 19)
++++ filesys/Make.vars	(working copy)
+@@ -1,5 +1,4 @@
+ # -*- makefile -*-
+-# 68439233984012
+ 
+ kernel.bin: DEFINES = -DUSERPROG -DFILESYS
+ KERNEL_SUBDIRS = threads devices lib lib/kernel userprog filesys
+Index: filesys/fsutil.c
+===================================================================
+--- filesys/fsutil.c	(revision 19)
++++ filesys/fsutil.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "filesys/fsutil.h"
+-//30521
+ #include <debug.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: filesys/directory.h
+===================================================================
+--- filesys/directory.h	(revision 19)
++++ filesys/directory.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_DIRECTORY_H
+-//5713
+ #define FILESYS_DIRECTORY_H
+ 
+ #include <stdbool.h>
+Index: filesys/fsutil.h
+===================================================================
+--- filesys/fsutil.h	(revision 19)
++++ filesys/fsutil.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_FSUTIL_H
+-//18162
+ #define FILESYS_FSUTIL_H
+ 
+ void fsutil_ls (char **argv);
+Index: filesys/filesys.c
+===================================================================
+--- filesys/filesys.c	(revision 19)
++++ filesys/filesys.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "filesys/filesys.h"
+-//7227
+ #include <debug.h>
+ #include <stdio.h>
+ #include <string.h>
+Index: filesys/file.c
+===================================================================
+--- filesys/file.c	(revision 19)
++++ filesys/file.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "filesys/file.h"
+-//31934
+ #include <debug.h>
+ #include "filesys/inode.h"
+ #include "threads/malloc.h"
+Index: filesys/filesys.h
+===================================================================
+--- filesys/filesys.h	(revision 19)
++++ filesys/filesys.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_FILESYS_H
+-//16571
+ #define FILESYS_FILESYS_H
+ 
+ #include <stdbool.h>
+Index: filesys/file.h
+===================================================================
+--- filesys/file.h	(revision 19)
++++ filesys/file.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef FILESYS_FILE_H
+-//19981
+ #define FILESYS_FILE_H
+ 
+ #include "filesys/off_t.h"
+Index: filesys/free-map.c
+===================================================================
+--- filesys/free-map.c	(revision 19)
++++ filesys/free-map.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "filesys/free-map.h"
+-//2732
+ #include <bitmap.h>
+ #include <debug.h>
+ #include "filesys/file.h"
+Index: filesys/inode.c
+===================================================================
+--- filesys/inode.c	(revision 19)
++++ filesys/inode.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "filesys/inode.h"
+-//6616
+ #include <list.h>
+ #include <debug.h>
+ #include <round.h>
+Index: examples/hex-dump.c
+===================================================================
+--- examples/hex-dump.c	(revision 19)
++++ examples/hex-dump.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* hex-dump.c
+-//875
+ 
+    Prints files specified on command line to the console in hex. */
+ 
+Index: examples/halt.c
+===================================================================
+--- examples/halt.c	(revision 19)
++++ examples/halt.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* halt.c
+-//9656
+ 
+    Simple program to test whether running a user program works.
+  	
+Index: examples/pwd.c
+===================================================================
+--- examples/pwd.c	(revision 19)
++++ examples/pwd.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* pwd.c
+-//30403
+    
+    Prints the absolute name of the present working directory. */
+ 
+Index: examples/Makefile
+===================================================================
+--- examples/Makefile	(revision 19)
++++ examples/Makefile	(working copy)
+@@ -1,5 +1,4 @@
+ SRCDIR = ..
+-# 2207718881418
+ 
+ # Test programs to compile, and a list of sources for each.
+ # To add a new test, put its name on the PROGS list
+Index: examples/lineup.c
+===================================================================
+--- examples/lineup.c	(revision 19)
++++ examples/lineup.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* lineup.c
+-//20316
+ 
+    Converts a file to uppercase in-place.
+ 
+Index: examples/cp.c
+===================================================================
+--- examples/cp.c	(revision 19)
++++ examples/cp.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* cat.c
+-//16757
+ 
+ Copies one file to another. */
+ 
+Index: examples/recursor.c
+===================================================================
+--- examples/recursor.c	(revision 19)
++++ examples/recursor.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <stdio.h>
+-//12718
+ #include <stdlib.h>
+ #include <syscall.h>
+ 
+Index: examples/mkdir.c
+===================================================================
+--- examples/mkdir.c	(revision 19)
++++ examples/mkdir.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* mkdir.c
+-//17966
+ 
+    Creates a directory. */
+ 
+Index: examples/shell.c
+===================================================================
+--- examples/shell.c	(revision 19)
++++ examples/shell.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <stdbool.h>
+-//5146
+ #include <stdio.h>
+ #include <string.h>
+ #include <syscall.h>
+Index: examples/cat.c
+===================================================================
+--- examples/cat.c	(revision 19)
++++ examples/cat.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* cat.c
+-//30975
+ 
+    Prints files specified on command line to the console. */
+ 
+Index: examples/rm.c
+===================================================================
+--- examples/rm.c	(revision 19)
++++ examples/rm.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* rm.c
+-//23751
+ 
+    Removes files specified on command line. */
+ 
+Index: examples/echo.c
+===================================================================
+--- examples/echo.c	(revision 19)
++++ examples/echo.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include <stdio.h>
+-//16655
+ #include <syscall.h>
+ 
+ int
+Index: examples/insult.c
+===================================================================
+--- examples/insult.c	(revision 19)
++++ examples/insult.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* Insult.c
+-//417
+ 
+    This is a version of the famous CS 107 random sentence
+    generator.  I wrote a program that reads a grammar definition
+Index: examples/ls.c
+===================================================================
+--- examples/ls.c	(revision 19)
++++ examples/ls.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* ls.c
+-//14422
+   
+    Lists the contents of the directory or directories named on
+    the command line, or of the current directory if none are
+Index: examples/cmp.c
+===================================================================
+--- examples/cmp.c	(revision 19)
++++ examples/cmp.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* cat.c
+-//21090
+ 
+    Compares two files. */
+ 
+Index: examples/mcp.c
+===================================================================
+--- examples/mcp.c	(revision 19)
++++ examples/mcp.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* mcp.c
+-//24595
+ 
+    Copies one file to another, using mmap. */
+ 
+Index: examples/bubsort.c
+===================================================================
+--- examples/bubsort.c	(revision 19)
++++ examples/bubsort.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* sort.c 
+-//10957
+ 
+    Test program to sort a large number of integers.
+  
+Index: examples/matmult.c
+===================================================================
+--- examples/matmult.c	(revision 19)
++++ examples/matmult.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* matmult.c 
+-//20620
+ 
+    Test program to do matrix multiplication on large arrays.
+  
+Index: examples/mcat.c
+===================================================================
+--- examples/mcat.c	(revision 19)
++++ examples/mcat.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* mcat.c
+-//16072
+ 
+    Prints files specified on command line to the console, using
+    mmap. */
+Index: vm/Make.vars
+===================================================================
+--- vm/Make.vars	(revision 19)
++++ vm/Make.vars	(working copy)
+@@ -1,5 +1,4 @@
+ # -*- makefile -*-
+-# 68439233984012
+ 
+ kernel.bin: DEFINES = -DUSERPROG -DFILESYS -DVM
+ KERNEL_SUBDIRS = threads devices lib lib/kernel userprog filesys vm
+Index: devices/vga.c
+===================================================================
+--- devices/vga.c	(revision 19)
++++ devices/vga.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/vga.h"
+-//22481
+ #include <round.h>
+ #include <stdint.h>
+ #include <stddef.h>
+Index: devices/partition.h
+===================================================================
+--- devices/partition.h	(revision 19)
++++ devices/partition.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_PARTITION_H
+-//7100
+ #define DEVICES_PARTITION_H
+ 
+ struct block;
+Index: devices/pci.h
+===================================================================
+--- devices/pci.h	(revision 19)
++++ devices/pci.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_PCI_H
+-//3654
+ #define DEVICES_PCI_H
+ 
+ #include <stdint.h>
+Index: devices/timer.c
+===================================================================
+--- devices/timer.c	(revision 19)
++++ devices/timer.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/timer.h"
+-//18923
+ #include <debug.h>
+ #include <inttypes.h>
+ #include <round.h>
+Index: devices/intq.h
+===================================================================
+--- devices/intq.h	(revision 19)
++++ devices/intq.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_INTQ_H
+-//10811
+ #define DEVICES_INTQ_H
+ 
+ #include "threads/interrupt.h"
+Index: devices/usb_ehci.c
+===================================================================
+--- devices/usb_ehci.c	(revision 19)
++++ devices/usb_ehci.c	(working copy)
+@@ -1,5 +1,4 @@
+ /**
+-//1953
+  *
+  * Actual EHCI will be implemented later
+  *
+Index: devices/vga.h
+===================================================================
+--- devices/vga.h	(revision 19)
++++ devices/vga.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_VGA_H
+-//14777
+ #define DEVICES_VGA_H
+ 
+ void vga_putc (int);
+Index: devices/timer.h
+===================================================================
+--- devices/timer.h	(revision 19)
++++ devices/timer.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_TIMER_H
+-//22817
+ #define DEVICES_TIMER_H
+ 
+ #include <round.h>
+Index: devices/usb.c
+===================================================================
+--- devices/usb.c	(revision 19)
++++ devices/usb.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/usb.h"
+-//18485
+ #include "devices/usb_hub.h"
+ #include "threads/synch.h"
+ #include "threads/malloc.h"
+Index: devices/block.c
+===================================================================
+--- devices/block.c	(revision 19)
++++ devices/block.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/block.h"
+-//6526
+ #include <list.h>
+ #include <string.h>
+ #include <stdio.h>
+Index: devices/speaker.c
+===================================================================
+--- devices/speaker.c	(revision 19)
++++ devices/speaker.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/speaker.h"
+-//16776
+ #include "devices/pit.h"
+ #include "threads/io.h"
+ #include "threads/interrupt.h"
+Index: devices/pit.c
+===================================================================
+--- devices/pit.c	(revision 19)
++++ devices/pit.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/pit.h"
+-//15661
+ #include <debug.h>
+ #include <stdint.h>
+ #include "threads/interrupt.h"
+Index: devices/usb.h
+===================================================================
+--- devices/usb.h	(revision 19)
++++ devices/usb.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef USB_H
+-//21859
+ #define USB_H
+ 
+ #include <stdint.h>
+Index: devices/speaker.h
+===================================================================
+--- devices/speaker.h	(revision 19)
++++ devices/speaker.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_SPEAKER_H
+-//27418
+ #define DEVICES_SPEAKER_H
+ 
+ void speaker_on (int frequency);
+Index: devices/block.h
+===================================================================
+--- devices/block.h	(revision 19)
++++ devices/block.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_BLOCK_H
+-//92
+ #define DEVICES_BLOCK_H
+ 
+ #include <stddef.h>
+Index: devices/kbd.c
+===================================================================
+--- devices/kbd.c	(revision 19)
++++ devices/kbd.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/kbd.h"
+-//11674
+ #include <ctype.h>
+ #include <debug.h>
+ #include <stdio.h>
+Index: devices/pit.h
+===================================================================
+--- devices/pit.h	(revision 19)
++++ devices/pit.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_PIT_H
+-//9393
+ #define DEVICES_PIT_H
+ 
+ #include <stdint.h>
+Index: devices/ide.c
+===================================================================
+--- devices/ide.c	(revision 19)
++++ devices/ide.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/ide.h"
+-//3709
+ #include <ctype.h>
+ #include <debug.h>
+ #include <stdbool.h>
+Index: devices/usb_uhci.c
+===================================================================
+--- devices/usb_uhci.c	(revision 19)
++++ devices/usb_uhci.c	(working copy)
+@@ -1,5 +1,4 @@
+ /**
+-//4436
+  * Universal Host Controller Interface driver
+  * TODO:
+  *	Stall timeouts
+Index: devices/kbd.h
+===================================================================
+--- devices/kbd.h	(revision 19)
++++ devices/kbd.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_KBD_H
+-//18496
+ #define DEVICES_KBD_H
+ 
+ #include <stdint.h>
+Index: devices/ide.h
+===================================================================
+--- devices/ide.h	(revision 19)
++++ devices/ide.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_IDE_H
+-//1280
+ #define DEVICES_IDE_H
+ 
+ void ide_init (void);
+Index: devices/usb_storage.c
+===================================================================
+--- devices/usb_storage.c	(revision 19)
++++ devices/usb_storage.c	(working copy)
+@@ -1,5 +1,4 @@
+ /**
+-//17288
+  * USB mass storage driver - just like the one Elvis used!
+  */
+ 
+Index: devices/serial.c
+===================================================================
+--- devices/serial.c	(revision 19)
++++ devices/serial.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/serial.h"
+-//13018
+ #include <debug.h>
+ #include "devices/input.h"
+ #include "devices/intq.h"
+Index: devices/serial.h
+===================================================================
+--- devices/serial.h	(revision 19)
++++ devices/serial.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_SERIAL_H
+-//15994
+ #define DEVICES_SERIAL_H
+ 
+ #include <stdint.h>
+Index: devices/usb_hub.c
+===================================================================
+--- devices/usb_hub.c	(revision 19)
++++ devices/usb_hub.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/usb.h"
+-//21640
+ #include "devices/usb_hub.h"
+ #include <lib/debug.h>
+ 
+Index: devices/rtc.c
+===================================================================
+--- devices/rtc.c	(revision 19)
++++ devices/rtc.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/rtc.h"
+-//17403
+ #include <stdio.h>
+ #include "threads/io.h"
+ 
+Index: devices/usb_hub.h
+===================================================================
+--- devices/usb_hub.h	(revision 19)
++++ devices/usb_hub.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef HUB_H
+-//10070
+ #define HUB_H
+ 
+ void usb_hub_init(void);
+Index: devices/rtc.h
+===================================================================
+--- devices/rtc.h	(revision 19)
++++ devices/rtc.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef RTC_H
+-//15305
+ #define RTC_H
+ 
+ typedef unsigned long time_t;
+Index: devices/input.c
+===================================================================
+--- devices/input.c	(revision 19)
++++ devices/input.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/input.h"
+-//3421
+ #include <debug.h>
+ #include "devices/intq.h"
+ #include "devices/serial.h"
+Index: devices/input.h
+===================================================================
+--- devices/input.h	(revision 19)
++++ devices/input.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef DEVICES_INPUT_H
+-//963
+ #define DEVICES_INPUT_H
+ 
+ #include <stdbool.h>
+Index: devices/partition.c
+===================================================================
+--- devices/partition.c	(revision 19)
++++ devices/partition.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/partition.h"
+-//31968
+ #include <packed.h>
+ #include <stdlib.h>
+ #include <string.h>
+Index: devices/pci_lookup.h
+===================================================================
+--- devices/pci_lookup.h	(revision 19)
++++ devices/pci_lookup.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef PCILOOKUP_H
+-//9861
+ #define PCILOOKUP_H
+ 
+ #ifdef PCI_TRANSLATION_ENABLE
+Index: devices/pci.c
+===================================================================
+--- devices/pci.c	(revision 19)
++++ devices/pci.c	(working copy)
+@@ -1,5 +1,4 @@
+ #define PCI_TRANSLATION_ENABLE 1
+-//5518
+ 
+ #include "devices/pci.h"
+ #include "threads/malloc.h"
+Index: devices/intq.c
+===================================================================
+--- devices/intq.c	(revision 19)
++++ devices/intq.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "devices/intq.h"
+-//25264
+ #include <debug.h>
+ #include "threads/thread.h"
+ 
+Index: threads/synch.c
+===================================================================
+--- threads/synch.c	(revision 19)
++++ threads/synch.c	(working copy)
+@@ -1,5 +1,4 @@
+ /* This file is derived from source code for the Nachos
+-//27016
+    instructional operating system.  The Nachos copyright notice
+    is reproduced in full below. */
+ 
+Index: threads/loader.S
+===================================================================
+--- threads/loader.S	(revision 19)
++++ threads/loader.S	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/loader.h"
+-#### 3072747732280
+ 
+ #### Kernel loader.
+ 
+Index: threads/synch.h
+===================================================================
+--- threads/synch.h	(revision 19)
++++ threads/synch.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_SYNCH_H
+-//14848
+ #define THREADS_SYNCH_H
+ 
+ #include <list.h>
+Index: threads/intr-stubs.S
+===================================================================
+--- threads/intr-stubs.S	(revision 19)
++++ threads/intr-stubs.S	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/loader.h"
+-#### 2761214755001924800
+ 
+         .text
+ 
+Index: threads/interrupt.c
+===================================================================
+--- threads/interrupt.c	(revision 19)
++++ threads/interrupt.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/interrupt.h"
+-//3720
+ #include <debug.h>
+ #include <inttypes.h>
+ #include <stdint.h>
+Index: threads/pte.h
+===================================================================
+--- threads/pte.h	(revision 19)
++++ threads/pte.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_PTE_H
+-//18701
+ #define THREADS_PTE_H
+ 
+ #include "threads/vaddr.h"
+Index: threads/flags.h
+===================================================================
+--- threads/flags.h	(revision 19)
++++ threads/flags.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_FLAGS_H
+-//13450
+ #define THREADS_FLAGS_H
+ 
+ /* EFLAGS Register. */
+Index: threads/interrupt.h
+===================================================================
+--- threads/interrupt.h	(revision 19)
++++ threads/interrupt.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_INTERRUPT_H
+-//10799
+ #define THREADS_INTERRUPT_H
+ 
+ #include <stdbool.h>
+Index: threads/init.c
+===================================================================
+--- threads/init.c	(revision 19)
++++ threads/init.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/init.h"
+-//9008
+ #include <console.h>
+ #include <debug.h>
+ #include <inttypes.h>
+Index: threads/vaddr.h
+===================================================================
+--- threads/vaddr.h	(revision 19)
++++ threads/vaddr.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_VADDR_H
+-//22244
+ #define THREADS_VADDR_H
+ 
+ #include <debug.h>
+Index: threads/Make.vars
+===================================================================
+--- threads/Make.vars	(revision 19)
++++ threads/Make.vars	(working copy)
+@@ -1,5 +1,4 @@
+ # -*- makefile -*-
+-# 68439233984012
+ 
+ kernel.bin: DEFINES =
+ KERNEL_SUBDIRS = threads devices lib lib/kernel $(TEST_SUBDIRS)
+Index: threads/switch.h
+===================================================================
+--- threads/switch.h	(revision 19)
++++ threads/switch.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_SWITCH_H
+-//15892
+ #define THREADS_SWITCH_H
+ 
+ #ifndef __ASSEMBLER__
+Index: threads/malloc.c
+===================================================================
+--- threads/malloc.c	(revision 19)
++++ threads/malloc.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/malloc.h"
+-//3533
+ #include <debug.h>
+ #include <list.h>
+ #include <round.h>
+Index: threads/thread.c
+===================================================================
+--- threads/thread.c	(revision 19)
++++ threads/thread.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/thread.h"
+-//24415
+ #include <debug.h>
+ #include <stddef.h>
+ #include <random.h>
+Index: threads/init.h
+===================================================================
+--- threads/init.h	(revision 19)
++++ threads/init.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_INIT_H
+-//22257
+ #define THREADS_INIT_H
+ 
+ #include <debug.h>
+Index: threads/palloc.c
+===================================================================
+--- threads/palloc.c	(revision 19)
++++ threads/palloc.c	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/palloc.h"
+-//5561
+ #include <bitmap.h>
+ #include <debug.h>
+ #include <inttypes.h>
+Index: threads/loader.h
+===================================================================
+--- threads/loader.h	(revision 19)
++++ threads/loader.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_LOADER_H
+-//23641
+ #define THREADS_LOADER_H
+ 
+ /* Constants fixed by the PC BIOS. */
+Index: threads/malloc.h
+===================================================================
+--- threads/malloc.h	(revision 19)
++++ threads/malloc.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_MALLOC_H
+-//1700
+ #define THREADS_MALLOC_H
+ 
+ #include <debug.h>
+Index: threads/io.h
+===================================================================
+--- threads/io.h	(revision 19)
++++ threads/io.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_IO_H
+-//4602
+ #define THREADS_IO_H
+ 
+ #include <stddef.h>
+Index: threads/thread.h
+===================================================================
+--- threads/thread.h	(revision 19)
++++ threads/thread.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_THREAD_H
+-//487
+ #define THREADS_THREAD_H
+ 
+ #include <debug.h>
+Index: threads/start.S
+===================================================================
+--- threads/start.S	(revision 19)
++++ threads/start.S	(working copy)
+@@ -1,5 +1,4 @@
+ 	#include "threads/loader.h"
+-#### 105476995527
+ 
+ #### Kernel startup code.
+ 
+Index: threads/palloc.h
+===================================================================
+--- threads/palloc.h	(revision 19)
++++ threads/palloc.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_PALLOC_H
+-//3007
+ #define THREADS_PALLOC_H
+ 
+ #include <stddef.h>
+Index: threads/intr-stubs.h
+===================================================================
+--- threads/intr-stubs.h	(revision 19)
++++ threads/intr-stubs.h	(working copy)
+@@ -1,5 +1,4 @@
+ #ifndef THREADS_INTR_STUBS_H
+-//22099
+ #define THREADS_INTR_STUBS_H
+ 
+ /* Interrupt stubs.
+Index: threads/switch.S
+===================================================================
+--- threads/switch.S	(revision 19)
++++ threads/switch.S	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/switch.h"
+-#### 3272679800857
+ 
+ #### struct thread *switch_threads (struct thread *cur, struct thread *next);
+ ####
+Index: threads/kernel.lds.S
+===================================================================
+--- threads/kernel.lds.S	(revision 19)
++++ threads/kernel.lds.S	(working copy)
+@@ -1,5 +1,4 @@
+ #include "threads/loader.h"
+-//2804600295885007919
+ 
+ OUTPUT_FORMAT("elf32-i386")
+ OUTPUT_ARCH("i386")

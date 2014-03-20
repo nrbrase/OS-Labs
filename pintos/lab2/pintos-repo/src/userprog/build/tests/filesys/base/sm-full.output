@@ -1,0 +1,89 @@
+Copying tests/filesys/base/sm-full to scratch partition...
+qemu -hda /tmp/_EnQE4M7GR.dsk -m 4 -net none -nographic -monitor null
+PiLo hda2
+Loading.............
+Kernel command line: -q -f extract run sm-full
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+PCI: 8192 pages for 0:2.0 failed - may not work
+PCI Device 0:0.0 (8086,1237): Intel - 82441FX (PCI Host) IRQ 0
+PCI Device 0:1.0 (8086,7000): Intel - 82371SB_ISA (PCI-ISA Bridge) IRQ 0
+PCI Device 0:1.1 (8086,7010): Intel - 82371SB_IDE (Unknown Type) IRQ 0
+PCI Device 0:1.3 (8086,7113): Intel - 82371AB/EB/MB_ACPI (Unknown Type) IRQ 9
+PCI Device 0:2.0 (1013,b8): Cirrus Logic - CL-GD5446 (VGA Controller) IRQ 0
+before thread create returns 
+Calibrating timer...  124,313,600 loops/s.
+Initializing EHCI
+Initializing UHCI
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 213 sectors (106 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 106 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from hda3 into file system...
+Putting 'sm-full' into the file system...
+Erasing ustar archive...
+Executing 'sm-full':
+before thread create returns 
+((null)) begin
+((null)) create "quux"
+((null)) open "quux"
+((null)) writing "quux"
+Page fault at 0xe02381f8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002fd1b
+ cr2=e02381f8 error=00000000
+ eax=c010e000 ebx=c010efb0 ecx=0000162e edx=00000009
+ esi=0804bda0 edi=0804a874 esp=0804d400 ebp=0000162e
+ cs=0008 ds=0010 es=0010 ss=0018
+Kernel PANIC at ../../userprog/exception.c:101 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc002cb6e 0xc002fd1bPage fault at 0x162e: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002a72d
+ cr2=0000162e error=00000000
+ eax=0000000b ebx=0000162e ecx=000007a1 edx=000003d4
+ esi=00000065 edi=c00329d8 esp=c0034ec3 ebp=c010ee58
+ cs=0008 ds=0010 es=0010 ss=fd1b
+Kernel PANIC recursion at ../../userprog/exception.c:101 in kill().
+Timer: 283 ticks
+Thread: 0 idle ticks, 281 kernel ticks, 2 user ticks
+hda2 (filesys): 63 reads, 216 writes
+hda3 (scratch): 105 reads, 2 writes
+Page fault at 0x30656491: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0022b9c
+ cr2=30656491 error=00000000
+ eax=30656491 ebx=30656491 ecx=00000780 edx=000003d4
+ esi=00000005 edi=30656491 esp=00000000 ebp=c010ee30
+ cs=0008 ds=0010 es=0010 ss=91b4
+Page fault at 0xccccccd0: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc002cfef
+ cr2=ccccccd0 error=00000002
+ eax=c010b04c ebx=c010b04c ecx=cccccccc edx=c010b04c
+ esi=c003b900 edi=c010b000 esp=c003a8b0 ebp=c003b918
+ cs=0008 ds=0010 es=0010 ss=0097
+Page fault at 0xcccccce0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0031183
+ cr2=cccccce0 error=00000000
+ eax=cccccccc ebx=c010b04c ecx=00000780 edx=000003d4
+ esi=00000065 edi=c00329d8 esp=c0033722 ebp=c010e988
+ cs=0008 ds=0010 es=0010 ss=e81c
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0030de3
+ cr2=ccccccd8 error=00000000
+ eax=cccccccc ebx=cccccccc ecx=00000780 edx=000003d4
+ esi=00000065 edi=c00329d8 esp=c010e680 ebp=c010e7bc
+ cs=0008 ds=0010 es=0010 ss=0002
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0030de3
+ cr2=ccccccd8 error=00000000
+ eax=cccccccc ebx=cccccccc ecx=00000780 edx=000003d4
+ esi=00000065 edi=c00329d8 esp=c002e7d4 ebp=c010e630
+ cs=0008 ds=0010 es=0010 ss=0063
+Page fault at 0xccccccd8: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0030de3
+ cr2=ccccccd8 error=00000000
+ eax=cccccccc ebx=cccccccc ecx=00000780 edx=000003d4
+ esi=00000065 edi=c00329d8 esp=c002e7d4 ebp=c010e4a4
+ cs=0008 ds=001Simulation terminated due to kernel panic.

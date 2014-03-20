@@ -1,0 +1,6 @@
+FAIL
+Kernel panic in run: PANIC at ../../userprog/exception.c:101 in kill(): Kernel bug - unexpected interrupt in kernel
+Call stack: 0xc002cb6e 0xc002fd1b
+Translation of call stack:
+0xc002cb6e: debug_panic (.../../lib/kernel/debug.c:37)
+0xc002fd1b: syscall_write (.../../userprog/syscall.c:92)

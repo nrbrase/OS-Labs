@@ -1,0 +1,48 @@
+Copying tests/filesys/base/syn-write to scratch partition...
+Copying tests/filesys/base/child-syn-wrt to scratch partition...
+qemu -hda /tmp/fuMNzZBVpz.dsk -m 4 -net none -nographic -monitor null
+PiLo hda2
+Loading.............
+Kernel command line: -q -f extract run syn-write
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+PCI: 8192 pages for 0:2.0 failed - may not work
+PCI Device 0:0.0 (8086,1237): Intel - 82441FX (PCI Host) IRQ 0
+PCI Device 0:1.0 (8086,7000): Intel - 82371SB_ISA (PCI-ISA Bridge) IRQ 0
+PCI Device 0:1.1 (8086,7010): Intel - 82371SB_IDE (Unknown Type) IRQ 0
+PCI Device 0:1.3 (8086,7113): Intel - 82371AB/EB/MB_ACPI (Unknown Type) IRQ 9
+PCI Device 0:2.0 (1013,b8): Cirrus Logic - CL-GD5446 (VGA Controller) IRQ 0
+before thread create returns 
+Calibrating timer...  104,755,200 loops/s.
+Initializing EHCI
+Initializing UHCI
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 213 sectors (106 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 224 sectors (112 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from hda3 into file system...
+Putting 'syn-write' into the file system...
+Putting 'child-syn-wrt' into the file system...
+Erasing ustar archive...
+Executing 'syn-write':
+before thread create returns 
+((null)) begin
+((null)) create "stuff"
+((null)) exec child 1 of 10: "child-syn-wrt 0"
+((null)) exec child 2 of 10: "child-syn-wrt 1"
+((null)) exec child 3 of 10: "child-syn-wrt 2"
+((null)) exec child 4 of 10: "child-syn-wrt 3"
+((null)) exec child 5 of 10: "child-syn-wrt 4"
+((null)) exec child 6 of 10: "child-syn-wrt 5"
+((null)) exec child 7 of 10: "child-syn-wrt 6"
+((null)) exec child 8 of 10: "child-syn-wrt 7"
+((null)) exec child 9 of 10: "child-syn-wrt 8"
+((null)) exec child 10 of 10: "child-syn-wrt 9"
+((null)) wait for child 1 of 10 returned -1073742160 (expected 0)
+((null)) wait for child 1 of 10 returned -1073742160 (expected 0): FAILED
+Simulation terminated due to test failure.

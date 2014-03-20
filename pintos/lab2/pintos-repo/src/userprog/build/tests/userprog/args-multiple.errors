@@ -1,0 +1,2 @@
+Use of uninitialized value in numeric le (<=) at /home/vipul/Desktop/Operating System/lab2/pintos-repo/src/utils/pintos line 864.
+qemu: terminating on signal 2 from pid 6762

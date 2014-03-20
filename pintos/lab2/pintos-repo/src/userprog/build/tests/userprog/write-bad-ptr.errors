@@ -1,0 +1,20 @@
+EAX=00000010 EBX=670e8b66 ECX=00000000 EDX=00000000
+ESI=ffffff00 EDI=c0031ac4 EBP=c00ff044 ESP=c00ff000
+EIP=c0021a71 EFL=00000082 [--S----] CPL=0 II=0 A20=1 SMM=0 HLT=0
+ES =0010 00000000 ffffffff 00cf9300 DPL=0 DS   [-WA]
+CS =0008 00000000 ffffffff 00cf9a00 DPL=0 CS32 [-R-]
+SS =0010 00000000 ffffffff 00cf9300 DPL=0 DS   [-WA]
+DS =0010 00000000 ffffffff 00cf9300 DPL=0 DS   [-WA]
+FS =0023 00000000 ffffffff 00cff300 DPL=3 DS   [-WA]
+GS =0023 00000000 ffffffff 00cff300 DPL=3 DS   [-WA]
+LDT=0000 00000000 0000ffff 00008200 DPL=0 LDT
+TR =0028 c0105000 00000067 00408900 DPL=0 TSS32-avl
+GDT=     c003bee0 0000002f
+IDT=     c003b0e0 000007ff
+CR0=80010015 CR2=c00feffc CR3=0010f000 CR4=00000000
+DR0=00000000 DR1=00000000 DR2=00000000 DR3=00000000 
+DR6=ffff0ff0 DR7=00000400
+EFER=0000000000000000
+Triple fault. Halting for inspection via QEMU monitor.
+Use of uninitialized value in numeric le (<=) at /home/vipul/Desktop/Operating System/lab2/pintos-repo/src/utils/pintos line 864.
+qemu: terminating on signal 2 from pid 11287
